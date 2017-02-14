@@ -48,3 +48,14 @@ z:'😰',
 '+':'🐵',
 '?':'🐒'
  }
+
+ const reverseEmojiKey = {}
+
+for (let alphanumericChar in emojiKey){
+  reverseEmojiKey[emojiKey[alphanumericChar]]=alphanumericChar
+}
+const decode = (emojiInput) => {
+    console.log(emojiInput)
+
+}
+decode('abcde')
