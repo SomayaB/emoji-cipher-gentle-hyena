@@ -1,4 +1,3 @@
-/*use strict */
 const emojiKey = {
 a:'😄',
 b:'😃',
@@ -58,4 +57,8 @@ const decode = (emojiInput) => {
     console.log(emojiInput)
 
 }
-decode('abcde')
+const decodeSingleChar = emojiInput => {
+  return reverseEmojiKey[emojiInput]
+}
+let returnVal= decodeSingleChar('😱')
+console.log(returnVal)
