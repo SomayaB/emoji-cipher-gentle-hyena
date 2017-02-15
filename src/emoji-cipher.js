@@ -1,3 +1,5 @@
+// import GraphemeSplitter from '../graphemeSplitter'
+
 const emojiKey = {
 a:'😄',
 b:'😃',
@@ -53,22 +55,31 @@ z:'😰',
 for (let alphanumericChar in emojiKey){
   reverseEmojiKey[emojiKey[alphanumericChar]]=alphanumericChar
 }
+const decodeSingleEmoji = emojiInput => {
+  console.log('this is line 57',emojiInput.length)
+  return reverseEmojiKey[emojiInput] = reverseEmojiKey[emojiInput]
+}
+
+//https://github.com/orling/grapheme-splitter
 const decode = emojiStringInput => {
+  // const splitter = new GraphemeSplitter()
+  // console.log(splitter, 'splitter');
+  emojiInputArray = emojiStringInput.split('')
+  console.log("emojiInputArray", emojiInputArray);
      let decodedString = ""
-     console.log(emojiStringInput.length)
-     for(let index = 0; emojiStringInput.length; index + 2) {
-        const character = decodeSingleChar(emojiStringInput[index])
+     console.log('input string length',emojiInputArray.length)
+     for(let index = 0; index < emojiInputArray.length; index += 2) {
+        const character = decodeSingleEmoji(emojiInputArray[index] + emojiInputArray[index+1])
+        console.log('character',character)
         decodedString += character
      }
   return decodedString
 }
 
-const returnValue = decode('🐱😩😅')
-const decodeSingleChar = emojiInput => {
-  console.log(emojiInput.length)
-  return reverseEmojiKey[emojiInput]
-}
-let returnVal= decodeSingleChar('😱')
-console.log(returnValue)
+const returnDecodeValue = decode('😀😱')
+
+let returnSingleCharVal= decodeSingleEmoji('😱')
+console.log('returnSingleCharVal',returnSingleCharVal)
+console.log('returnDecodeValue',returnDecodeValue)
 //try writing a for loop inside an if else where the
-//else is the break condition to for loop
+//else is the  condition that satifies the loop
