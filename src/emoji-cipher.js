@@ -53,12 +53,22 @@ z:'😰',
 for (let alphanumericChar in emojiKey){
   reverseEmojiKey[emojiKey[alphanumericChar]]=alphanumericChar
 }
-const decode = (emojiInput) => {
-    console.log(emojiInput)
-
+const decode = emojiStringInput => {
+     let decodedString = ""
+     console.log(emojiStringInput.length)
+     for(let index = 0; emojiStringInput.length; index + 2) {
+        const character = decodeSingleChar(emojiStringInput[index])
+        decodedString += character
+     }
+  return decodedString
 }
+
+const returnValue = decode('🐱😩😅')
 const decodeSingleChar = emojiInput => {
+  console.log(emojiInput.length)
   return reverseEmojiKey[emojiInput]
 }
 let returnVal= decodeSingleChar('😱')
-console.log(returnVal)
+console.log(returnValue)
+//try writing a for loop inside an if else where the
+//else is the break condition to for loop
