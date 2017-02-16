@@ -3,22 +3,23 @@
   "version": "1.0.0",
   "description": "Let's build a cipher using emoji. High five! 🙌🏽",
   "main": "emoji-cipher.js",
-  "dependencies": {
-    "babel-cli": "^6.22.2"
-  },
   "devDependencies": {
     "babel-cli": "^6.22.2",
-    "babel-preset-env": "^1.1.8"
+    "babel-preset-env": "^1.1.8",
+    "babel-register": "^6.23.0",
+    "chai": "^3.5.0",
+    "chai-change": "^2.1.2",
+    "mocha": "^3.2.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --compilers js:babel-register ./test/*.js",
     "build": "babel src -d lib"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SomayaB/emoji-cipher-gentle-hyena.git"
   },
-  "author": "",
+  "author": "Somaya and Leah Ann",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/SomayaB/emoji-cipher-gentle-hyena/issues"
