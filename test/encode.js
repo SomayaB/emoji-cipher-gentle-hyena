@@ -12,7 +12,12 @@ describe('encode', () => {
   })
 
   it('encodes alphanumeric characters into emoji string ', () => {
-    expect(encode( 'w07' )).to.equal( '😭😅🐱' )
+    expect(encode( 'w07' )).to.equal( '😭 😅 🐱 ' )
   })
 
+
+  it('outputs the corresponding emoji string when the input has spaces', () => {
+    expect(encode('i'+' '+'love'+' '+'you')).to.deep.equal('😗   😝 😁 😂 😉   😥 😁 😢 ')
+
+  })
 })

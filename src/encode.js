@@ -1,8 +1,8 @@
 // import { reverseEmojiKey, emojiKey } from './emojiKey'
 
 const emojiKey = {
-a:'😄',
-b:'😃',
+a:'👳',
+b:'👩🏾‍💻',
 c:'😀',
 d:'😊',
 e:'😉',
@@ -47,7 +47,8 @@ z:'😰',
 '(':'🐮',
 ')':'🐗',
 '+':'🐵',
-'?':'🐒'
+'?':'🐒',
+' ':' '
  }
 
  const reverseEmojiKey = {}
@@ -58,11 +59,8 @@ for (let alphanumericChar in emojiKey) {
 
 
 const encodeSingleAlphanumericChar = alphanumericCharInput => {
-  return emojiKey[alphanumericCharInput] = emojiKey[alphanumericCharInput]
-}
-
-let returnSingleEmoji = encodeSingleAlphanumericChar('h')
-console.log('returnSingleEmoji',returnSingleEmoji )
+   return emojiKey[alphanumericCharInput] = emojiKey[alphanumericCharInput]
+ }
 
 
 const encode = alphanumericCharStringInput => {
@@ -75,7 +73,6 @@ const encode = alphanumericCharStringInput => {
   return encodedString
 }
 
-let returnStringEmoji = encode('hjw')
-console.log('returnStringEmoji',returnStringEmoji )
+
 
 module.exports = { encode }
