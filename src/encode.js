@@ -57,18 +57,22 @@ for (let alphanumericChar in emojiKey) {
   reverseEmojiKey[emojiKey[alphanumericChar]] = alphanumericChar
 }
 
-const decodeSingleEmoji = emojiInput => {
-  return reverseEmojiKey[emojiInput] = reverseEmojiKey[emojiInput]
-}
 
-const decode = emojiStringInput => {
-  const emojiInputArray = emojiStringInput.split('')
-     let decodedString = ""
-     for(let index = 0; index < emojiInputArray.length; index += 2) {
-        const character = decodeSingleEmoji(emojiInputArray[index] + emojiInputArray[index+1])
-        decodedString += character
+const encodeSingleAlphanumericChar = alphanumericCharInput => {
+   return emojiKey[alphanumericCharInput] = emojiKey[alphanumericCharInput]
+ }
+
+
+const encode = alphanumericCharStringInput => {
+  const alphanumericCharInputArray = alphanumericCharStringInput
+     let encodedString = ""
+     for(let index = 0; index < alphanumericCharInputArray.length; index ++ ) {
+        const emoji = encodeSingleAlphanumericChar(alphanumericCharInputArray[index])
+        encodedString += `${emoji} `
      }
-  return decodedString
+  return encodedString
 }
 
-module.exports = { decode }
+
+
+module.exports = { encode }
