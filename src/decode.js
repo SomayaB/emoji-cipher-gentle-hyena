@@ -1,8 +1,8 @@
 // import { reverseEmojiKey, emojiKey } from './emojiKey'
 
 const emojiKey = {
-a:'😄',
-b:'😃',
+a:'👳',
+b:'😄',
 c:'😀',
 d:'😊',
 e:'😉',
@@ -47,7 +47,8 @@ z:'😰',
 '(':'🐮',
 ')':'🐗',
 '+':'🐵',
-'?':'🐒'
+'?':'🐒',
+' ':' '
  }
 
  const reverseEmojiKey = {}
